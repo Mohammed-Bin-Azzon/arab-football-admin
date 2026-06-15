@@ -1,14 +1,16 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+
+import 'dashboard_controller.dart';
+import 'widgets/admin_layout.dart';
 
 class DashboardScreen extends StatelessWidget {
   const DashboardScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-      body: Center(
-        child: Text('Admin Dashboard'),
-      ),
-    );
+    Get.put(DashboardController());
+
+    return const AdminLayout();
   }
 }
