@@ -3,6 +3,8 @@ import 'package:get/get.dart';
 import '../../core/network/api_client.dart';
 import '../../features/auth/auth_controller.dart';
 import '../../features/auth/auth_service.dart';
+import '../../features/matches/matches_controller.dart';
+import '../../features/matches/matches_service.dart';
 
 class InitialBinding extends Bindings {
   @override
@@ -16,6 +18,16 @@ class InitialBinding extends Bindings {
 
     Get.lazyPut<AuthController>(
       () => AuthController(Get.find<AuthService>()),
+      fenix: true,
+    );
+
+    Get.lazyPut<MatchesService>(
+      () => MatchesService(Get.find<ApiClient>()),
+      fenix: true,
+    );
+
+    Get.lazyPut<MatchesController>(
+      () => MatchesController(Get.find<MatchesService>()),
       fenix: true,
     );
   }

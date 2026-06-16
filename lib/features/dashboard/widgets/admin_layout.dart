@@ -5,6 +5,7 @@ import '../../../core/constants/app_colors.dart';
 import '../dashboard_controller.dart';
 import 'dashboard_home.dart';
 import 'sidebar_item.dart';
+import '../../matches/matches_screen.dart';
 
 class AdminLayout extends GetView<DashboardController> {
   const AdminLayout({super.key});
@@ -95,7 +96,7 @@ class AdminLayout extends GetView<DashboardController> {
           return const DashboardHome();
 
         case 1:
-          return const Center(child: Text('Matches'));
+          return const MatchesScreen();
 
         case 2:
           return const Center(child: Text('Users'));
