@@ -14,6 +14,7 @@ class CustomTextField extends StatelessWidget {
     this.suffixIcon,
     this.onChanged,
     this.textInputAction,
+    this.onSubmitted,
   });
 
   final TextEditingController controller;
@@ -25,6 +26,7 @@ class CustomTextField extends StatelessWidget {
   final Widget? suffixIcon;
   final ValueChanged<String>? onChanged;
   final TextInputAction? textInputAction;
+  final ValueChanged<String>? onSubmitted;
 
   @override
   Widget build(BuildContext context) {
@@ -35,10 +37,17 @@ class CustomTextField extends StatelessWidget {
       maxLines: maxLines,
       textAlign: TextAlign.right,
       onChanged: onChanged,
+      onSubmitted: onSubmitted,
       textInputAction: textInputAction,
       decoration: InputDecoration(
         hintText: hint,
-        prefixIcon: icon == null ? null : Icon(icon, color: AppColors.muted, size: 21),
+        prefixIcon: icon == null
+            ? null
+            : Icon(
+                icon,
+                color: AppColors.muted,
+                size: 21,
+              ),
         suffixIcon: suffixIcon,
       ),
     );

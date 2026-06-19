@@ -1,5 +1,6 @@
 import '../../core/constants/api_constants.dart';
 import '../../core/network/api_client.dart';
+import '../../core/services/storage_service.dart';
 import 'auth_model.dart';
 
 class AuthService {
@@ -27,5 +28,9 @@ class AuthService {
     }
 
     return data;
+  }
+
+  Future<void> logout() async {
+    await StorageService.clearSession();
   }
 }

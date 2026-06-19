@@ -33,13 +33,12 @@ class AuthController extends GetxController {
     try {
       isLoading.value = true;
 
-      final auth = await _authService.login(
-        email: email,
-        password: password,
-      );
+      final auth = await _authService.login(email: email, password: password);
 
       if (!auth.isAdmin) {
-        throw const ApiException('هذا الحساب لا يملك صلاحية الدخول للوحة الإدارة.');
+        throw const ApiException(
+          'هذا الحساب لا يملك صلاحية الدخول للوحة الإدارة.',
+        );
       }
 
       await StorageService.saveSession(
@@ -64,6 +63,19 @@ class AuthController extends GetxController {
 
   void togglePasswordVisibility() {
     isPasswordHidden.value = !isPasswordHidden.value;
+  }
+
+  Future<void> logout() async {
+    try {
+      await _authService.logout();
+    } finally {
+      emailController.clear();
+      passwordController.clear();
+      isPasswordHidden.value = true;
+      isLoading.value = false;
+
+      Get.offAllNamed(Routes.login);
+    }
   }
 
   @override
