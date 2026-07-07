@@ -1,16 +1,24 @@
-# arab_football_admin
+# Arab Football Admin Panel
 
-A new Flutter project.
+Flutter-based admin dashboard developed as part of the Arab Football Fans Platform graduation project.
 
-## Getting Started
+## Overview
 
-This project is a starting point for a Flutter application.
+The admin panel allows administrators to manage platform content, users, matches, and reports through a dedicated dashboard.
 
-A few resources to get you started if this is your first Flutter project:
+## Main Features
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+- User management
+- Match management
+- Reports management
+- Dashboard statistics
+- Secure administrator authentication
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## Technologies Used
+
+- Flutter
+- Dart
+
+## Related Project
+
+🔗 [Arab Football Fans Platform](https://github.com/Mohammed-Bin-Azzon/Arab-Football-Fans-Platform)
